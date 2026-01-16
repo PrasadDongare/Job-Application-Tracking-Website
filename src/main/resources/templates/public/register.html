@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      th:replace="layout/base :: content">
+<body>
+<h2>Register</h2>
+<form method="post" action="/api/auth/register" th:object="${registerRequest}">
+  <div class="mb-3">
+    <label>Name</label>
+    <input class="form-control" th:field="*{name}"/>
+  </div>
+  <div class="mb-3">
+    <label>Email</label>
+    <input class="form-control" th:field="*{email}"/>
+  </div>
+  <div class="mb-3">
+    <label>Password</label>
+    <input class="form-control" type="password" th:field="*{password}"/>
+  </div>
+  <div class="mb-3">
+    <label>Phone</label>
+    <input class="form-control" th:field="*{phone}"/>
+  </div>
+  <div class="mb-3">
+    <label>Education</label>
+    <input class="form-control" th:field="*{education}"/>
+  </div>
+  <div class="mb-3">
+    <label>Experience</label>
+    <input class="form-control" th:field="*{experience}"/>
+  </div>
+  <div class="mb-3">
+    <label>Skills (comma separated)</label>
+    <input class="form-control" name="skillsStr"/>
+  </div>
+  <small>Note: This simple form posts JSON is not wired fully; for production, use JS or a POST handler that converts the form to RegisterRequest.</small>
+  <button class="btn btn-success" type="submit">Register (API)</button>
+</form>
+</body>
+</html>

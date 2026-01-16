@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      th:replace="layout/base :: content">
+<body>
+<h2>My Profile</h2>
+<div>
+  <p><b>Name:</b> <span th:text="${profile.name}"></span></p>
+  <p><b>Email:</b> <span th:text="${profile.email}"></span></p>
+  <p><b>Phone:</b> <span th:text="${profile.phone}"></span></p>
+  <p><b>Education:</b> <span th:text="${profile.education}"></span></p>
+  <p><b>Experience:</b> <span th:text="${profile.experience}"></span></p>
+  <p><b>Skills:</b>
+    <span th:each="s : ${profile.skills}" th:text="${s} + ' '"></span>
+  </p>
+</div>
+</body>
+</html>

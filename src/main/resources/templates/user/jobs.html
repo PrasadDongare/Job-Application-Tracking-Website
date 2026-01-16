@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      th:replace="layout/base :: content">
+<body>
+<h2>Available Jobs</h2>
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th>Title</th>
+    <th>Location</th>
+    <th>Experience</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr th:each="j : ${jobs.content}">
+    <td th:text="${j.title}">Title</td>
+    <td th:text="${j.location}">Location</td>
+    <td th:text="${j.experienceLevel}">Exp</td>
+  </tr>
+  </tbody>
+</table>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      th:replace="layout/base :: content">
+<body>
+<h2>Create Job</h2>
+<form method="post" th:object="${job}">
+  <div class="mb-3">
+    <label>Title</label>
+    <input class="form-control" th:field="*{title}"/>
+  </div>
+  <div class="mb-3">
+    <label>Description</label>
+    <textarea class="form-control" th:field="*{description}"></textarea>
+  </div>
+  <div class="mb-3">
+    <label>Experience Level</label>
+    <input class="form-control" th:field="*{experienceLevel}"/>
+  </div>
+  <div class="mb-3">
+    <label>Location</label>
+    <input class="form-control" th:field="*{location}"/>
+  </div>
+  <div class="mb-3">
+    <label>Required Skills (comma separated)</label>
+    <input class="form-control" name="requiredSkillsStr"/>
+  </div>
+  <button class="btn btn-success" type="submit">Save</button>
+</form>
+</body>
+</html>

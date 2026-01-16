@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      th:replace="layout/base :: content">
+<body>
+<h2>User Dashboard</h2>
+
+<h4>Recommended Jobs</h4>
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th>Job</th>
+        <th>Location</th>
+        <th>Match %</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="r : ${recommendations}">
+        <td th:text="${r.jobTitle}">Job Title</td>
+        <td th:text="${r.location}">Location</td>
+        <td th:text="${r.matchPercentage}">80</td>
+    </tr>
+    </tbody>
+</table>
+
+<h4>My Applications</h4>
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th>Job</th>
+        <th>Status</th>
+        <th>Applied At</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="a : ${applications}">
+        <td th:text="${a.jobTitle}">Job</td>
+        <td th:text="${a.status}">Status</td>
+        <td th:text="${a.appliedAt}">Date</td>
+    </tr>
+    </tbody>
+</table>
+
+</body>
+</html>
